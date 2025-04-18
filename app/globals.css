@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 240, 240, 240;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #999;
+  transition: all 0.2s;
+}
+
+.cell:hover {
+  background-color: rgba(100, 100, 255, 0.2);
+  cursor: pointer;
+}
+
+.cell-empty {
+  background-color: #fff;
+}
+
+.cell-ship {
+  background-color: #666;
+}
+
+.cell-hit {
+  background-color: #f55;
+  position: relative;
+}
+
+.cell-hit::after {
+  content: "X";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
+}
+
+.cell-miss {
+  background-color: #55f;
+  position: relative;
+}
+
+.cell-miss::after {
+  content: "•";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
+}
+
+.ship-item {
+  padding: 8px 12px;
+  margin: 4px;
+  border: 2px solid #666;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ship-item:hover {
+  background-color: #eee;
+}
+
+.ship-selected {
+  background-color: #ddd;
+  border-color: #00a;
+}
+
+.ship-placed {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ship-sunk {
+  text-decoration: line-through;
+  opacity: 0.7;
+  background-color: #fdd;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(10, 40px);
+  grid-template-rows: repeat(10, 40px);
+  gap: 0;
+  margin: 20px 0;
+  position: relative;
+}
+
+.board-labels {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 0 20px;
+}
+
+.board-labels-side {
+  position: absolute;
+  left: -25px;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0 5px;
+}
+
+.board-label {
+  font-weight: bold;
+  font-size: 14px;
+}
