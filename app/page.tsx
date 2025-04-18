@@ -249,8 +249,8 @@ export default function Home() {
       />
       
       <div className="flex flex-col md:flex-row gap-8 w-full justify-center">
-        <div className="flex flex-col items-center">
-          <h2 className="text-xl font-semibold mb-2">Your Board</h2>
+        <div className="flex flex-col items-center mr-8">
+          <h2 className="text-xl font-semibold mb-8">Your Board</h2>
           {playerBoard && (
             <Board 
               board={playerBoard} 
@@ -264,7 +264,7 @@ export default function Home() {
         </div>
         
         <div className="flex flex-col items-center">
-          <h2 className="text-xl font-semibold mb-2">Computer&apos;s Board</h2>
+          <h2 className="text-xl font-semibold mb-8">Computer&apos;s Board</h2>
           {computerBoard && (
             <Board 
               board={computerBoard} 
