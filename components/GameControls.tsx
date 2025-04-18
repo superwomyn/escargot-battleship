@@ -34,7 +34,7 @@ const GameControls: React.FC<GameControlsProps> = ({
             <Ship
               key={ship.id}
               ship={ship}
-              isSelected={selectedShip && selectedShip.id === ship.id}
+              isSelected={!!(selectedShip && selectedShip.id === ship.id)}
               onClick={onShipSelect}
             />
           ))}
@@ -83,7 +83,7 @@ const GameControls: React.FC<GameControlsProps> = ({
         </div>
         
         <div className="text-sm text-gray-600 mt-2">
-          <p>Click on the computer's board to attack!</p>
+          <p>Click on the computer&apos;s board to attack!</p>
         </div>
       </div>
     );
